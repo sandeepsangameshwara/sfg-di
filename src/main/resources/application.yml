@@ -1,7 +1,30 @@
 spring:
   profiles:
-    active: EN,cat,qa
+    active:
+      -  EN
+      -  cat
+      -  sit
 guru:
   username: YMLusername
   password: YMLpassword
   jdbcUrl: YMLURL
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+guru:
+  username: YMLProdusername
+  password: YMLProdpassword
+  jdbcUrl: YMLProdURL
+
+---
+spring:
+  config:
+    activate:
+      on-profile: sit
+guru:
+  username: YMLSITusername
+  password: YMLSITpassword
+  jdbcUrl: YMLSITURL

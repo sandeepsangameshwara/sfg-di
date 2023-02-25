@@ -1,5 +1,6 @@
 package com.weekenddev.sfgdi;
 
+import com.weekenddev.sfgdi.config.SfgConfiguration;
 import com.weekenddev.sfgdi.controllers.*;
 import com.weekenddev.sfgdi.datasource.FakeDataSource;
 import com.weekenddev.sfgdi.services.PrototypeBean;
@@ -52,6 +53,12 @@ public class SfgDiApplication {
 		System.out.println("Username :"+fakeDataSource.getUserName());
 		System.out.println("Password :"+fakeDataSource.getPassword());
 		System.out.println("JDBCUrl :"+fakeDataSource.getJdbcUrl());
+
+		System.out.println("-------------- Accessing properties from Property file");
+		SfgConfiguration sfgConfiguration=ctx.getBean(SfgConfiguration.class);
+		System.out.println("Username :"+sfgConfiguration.getUserName());
+		System.out.println("Password :"+sfgConfiguration.getPassword());
+		System.out.println("JDBCUrl :"+sfgConfiguration.getJdbcUrl());
 
 	}
 
