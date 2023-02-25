@@ -9,7 +9,7 @@ import com.weekenddev.sfgdi.services.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
-@PropertySource({"classpath:datasource.properties","classpath:datasource1.properties"})
+
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
