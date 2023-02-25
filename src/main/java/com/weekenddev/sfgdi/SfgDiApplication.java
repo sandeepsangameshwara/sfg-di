@@ -1,6 +1,7 @@
 package com.weekenddev.sfgdi;
 
 import com.weekenddev.sfgdi.controllers.*;
+import com.weekenddev.sfgdi.datasource.FakeDataSource;
 import com.weekenddev.sfgdi.services.PrototypeBean;
 import com.weekenddev.sfgdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -45,6 +46,12 @@ public class SfgDiApplication {
 		prototypeBean1.getBeanScope();
 		PrototypeBean prototypeBean2=ctx.getBean(PrototypeBean.class);
 		prototypeBean2.getBeanScope();
+
+		System.out.println("-------------- Accessing properties from Property file");
+		FakeDataSource fakeDataSource=ctx.getBean(FakeDataSource.class);
+		System.out.println("Username :"+fakeDataSource.getUserName());
+		System.out.println("Password :"+fakeDataSource.getPassword());
+		System.out.println("JDBCUrl :"+fakeDataSource.getJdbcUrl());
 
 	}
 
