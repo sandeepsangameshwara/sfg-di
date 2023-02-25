@@ -1,6 +1,7 @@
 package com.weekenddev.sfgdi;
 
 import com.weekenddev.sfgdi.config.SfgConfiguration;
+import com.weekenddev.sfgdi.config.SfgConstructorConfig;
 import com.weekenddev.sfgdi.controllers.*;
 import com.weekenddev.sfgdi.datasource.FakeDataSource;
 import com.weekenddev.sfgdi.services.PrototypeBean;
@@ -59,6 +60,12 @@ public class SfgDiApplication {
 		System.out.println("Username :"+sfgConfiguration.getUserName());
 		System.out.println("Password :"+sfgConfiguration.getPassword());
 		System.out.println("JDBCUrl :"+sfgConfiguration.getJdbcUrl());
+
+		System.out.println("-------------- Constructor Binding of property file");
+		SfgConstructorConfig sfgConstructorConfig=ctx.getBean(SfgConstructorConfig.class);
+		System.out.println("Username :"+sfgConstructorConfig.getUserName());
+		System.out.println("Password :"+sfgConstructorConfig.getPassword());
+		System.out.println("JDBCUrl :"+sfgConstructorConfig.getJdbcUrl());
 
 	}
 
